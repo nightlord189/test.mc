@@ -26,7 +26,8 @@ func main() {
 			"time":    time.Now(),
 		})
 	})
-	r.Run(":8080")
+	port := cfg["port"]
+	r.Run(fmt.Sprintf(":%v", port))
 }
 
 func readConfig(path string) (map[string]interface{}, error) {
